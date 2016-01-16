@@ -5,9 +5,7 @@ import $ from 'jquery';
 class SignInToTwitter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            requestToken: '', requestTokenSecret: ''
-        }
+        this.state = { }
     }
 
     componentDidMount() {
