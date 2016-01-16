@@ -10,7 +10,8 @@
   "author": "Nicholas Dujay <nickdujay@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "node-twitter-api": "^1.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"
