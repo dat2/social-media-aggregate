@@ -1,0 +1,26 @@
+{
+  "name": "social-media-aggregate-client",
+  "version": "0.1.0",
+  "description": "breh",
+  "main": "breh.js",
+  "scripts": {
+    "test": "breh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dat2/social-media-aggregate.git"
+  },
+  "keywords": [
+    "breh"
+  ],
+  "author": "Nicholas Dujay <nickdujay@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dat2/social-media-aggregate/issues"
+  },
+  "homepage": "https://github.com/dat2/social-media-aggregate#readme",
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "social-media-aggregate-server",
+  "version": "0.1.0",
+  "description": "breh",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Dujay <nickdujay@gmail.com>",
+  "license": "ISC"
+}
