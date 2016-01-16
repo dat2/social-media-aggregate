@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon index.js"
+    "watch": "sudo ./node_modules/.bin/nodemon index.js"
   },
   "author": "Nicholas Dujay <nickdujay@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
   }
 }

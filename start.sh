@@ -5,9 +5,9 @@ cd client
 react-dev-server &
 PIDS[0]=$!
 
-#cd ../server
-#npm run watch &
-#PIDS[1]=$!
+cd ../server
+npm run watch &
+PIDS[1]=$!
 
-trap "kill -9 ${PIDS[*]}" SIGINT
+trap "kill -9 ${PIDS[*]}; echo 'Killing pids' ${PIDS[*]}" SIGINT
 wait
