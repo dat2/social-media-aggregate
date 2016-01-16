@@ -9,6 +9,7 @@ class SignInToTwitter extends React.Component {
           user: {
             twitter: {
               token: '',
+              tokenSecret: '',
               username: '',
               displayName: ''
             }
@@ -27,6 +28,7 @@ class SignInToTwitter extends React.Component {
         user: {
           twitter: {
             token,
+            tokenSecret,
             username,
             displayName
           }
@@ -39,6 +41,7 @@ class SignInToTwitter extends React.Component {
             <div>
               Twitter Login Info
               <p>Token {token}</p>
+              <p>Token Secret {tokenSecret}</p>
               <p>Username {username}</p>
               <p>DisplayName {displayName}</p>
             </div>

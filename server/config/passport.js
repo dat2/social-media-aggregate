@@ -34,6 +34,7 @@ module.exports = function(passport) {
               twitter: {
                 id: profile.id,
                 token: token,
+                tokenSecret: tokenSecret,
                 username: profile.username,
                 displayName: profile.displayName
               }
