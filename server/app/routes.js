@@ -1,3 +1,6 @@
+var Twitter = require('twitter');
+var auth = require('../config/auth');
+
 module.exports = function(app, passport) {
   // auth routes
   app.get('/auth/twitter', passport.authenticate('twitter'));
@@ -9,6 +12,23 @@ module.exports = function(app, passport) {
 
   app.get('/user', function(req, res) {
     res.json(req.user);
+  });
+
+  app.get('/tweets', function(req, res) {
+    var client = new Twitter({
+      consumer_key: auth.twitterNick.consumerKey,
+      consumer_secret: auth.twitterNick.consumerSecret,
+      access_token_key: req.user.token,
+      access_token_secret: req.user.tokenSecret
+    });
+
+    client.get('statuses/user_timeline', { screen_name: 'kryczko' }, function(error, tweets, response) {
+      if(error) {
+        res.status(500).send(error);
+      } else {
+        res.json({ tweets: tweets });
+      }
+    });
   });
 };
 
