@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "breh",
   "main": "breh.js",
-  "scripts": {},
+  "scripts": {
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dat2/social-media-aggregate.git"

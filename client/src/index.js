@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-var $ = require('jquery');
+import $ from 'jquery';
 
 class SignInToTwitter extends React.Component {
     constructor(props) {
@@ -10,11 +10,18 @@ class SignInToTwitter extends React.Component {
         }
     }
 
-    render() {
-        $.post('/twitterInfo', function (data) {
-            console.log(data);
+    componentDidMount() {
+        $.post('/twitterInfo', (data) => {
+          this.setState(data);
         });
-        return <div> Hello World!!! </div>
+    }
+
+    render() {
+        return (
+          <div>
+            Hello World!!!
+          </div>
+        );
     }
 }
 
