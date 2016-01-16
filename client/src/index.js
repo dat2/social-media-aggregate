@@ -11,16 +11,13 @@ class SignInToTwitter extends React.Component {
     }
 
     componentDidMount() {
-        $.post('/twitterInfo', data => {
-          this.setState(data);
-          console.log(data);
-        });
     }
 
     render() {
         return (
           <div>
             Hello World!!!
+            <a href='/auth/twitter'>Login to twitter</a>
           </div>
         );
     }

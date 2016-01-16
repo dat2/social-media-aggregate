@@ -1,6 +1,17 @@
-var path = require('path');
-var express = require('express');
-var app = express();
+module.exports = function(app, passport) {
+  // auth routes
+  app.get('/auth/twitter', passport.authenticate('twitter'));
+  app.get('/auth/twitter/callback', passport.authenticate('twitter', {
+    successRedirect: '/tweets',
+    failureRedirect: '/',
+    failureFlash: true
+  }));
+
+  app.get('/tweets', function(req, res) {
+    res.json(req.user);
+  });
+};
+
 var twitterAPI = require('node-twitter-api');
 var instagramAPI = require('instagram-node').instagram();
 
@@ -31,29 +42,3 @@ var instagramAPI = require('instagram-node').instagram();
 // app.get('/authorize_user', exports.authorize_user);
 // // This is your redirect URI
 // app.get('/handleauth', exports.handleauth);
-
-
-app.use(express.static(path.resolve(__dirname, '../client/public')));
-
-var twitter = new twitterAPI({
-    consumerKey: 'aAG0jYGwxKSHwdQ2tSfDRMskR',
-    consumerSecret: '3w2JOgJDHulIXZtdB1WZPjJZXjbLNGkH0eG2H1RNehIyPDVTIV',
-    callback: 'oob'
-});
-
-app.post('/twitterInfo', function(req, res) {
-    twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results){
-        if (error) {
-            console.log("Error getting OAuth request token : ");
-            console.dir(error);
-        } else {
-            res.json({requestToken: requestToken, requestTokenSecret: requestTokenSecret});
-        }
-    });
-});
-
-var PORT = 3000;
-
-app.listen(PORT, function() {
-  console.log('listening on port ' + PORT);
-});
