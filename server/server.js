@@ -26,6 +26,7 @@ app.use(session({
 // passport
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.authenticate('remember-me'));
 require('./config/passport')(passport);
 
 // routes

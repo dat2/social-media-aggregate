@@ -2,12 +2,12 @@ module.exports = function(app, passport) {
   // auth routes
   app.get('/auth/twitter', passport.authenticate('twitter'));
   app.get('/auth/twitter/callback', passport.authenticate('twitter', {
-    successRedirect: '/tweets',
-    failureRedirect: '/',
+    successRedirect: '/',
+    failureRedirect: '/twitter/failed',
     failureFlash: true
   }));
 
-  app.get('/tweets', function(req, res) {
+  app.get('/user', function(req, res) {
     res.json(req.user);
   });
 };
