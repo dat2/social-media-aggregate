@@ -19,7 +19,8 @@ class SignInToTwitter extends React.Component {
     render() {
         return (
           <div>
-            Hello World!!!
+            Hello World!!! <br/>
+            Stuff: {this.state.data}
           </div>
         );
     }

@@ -42,7 +42,6 @@ var twitter = new twitterAPI({
 });
 
 app.post('/twitterInfo', function(req, res) {
-    console.log('brah');
     twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results){
         if (error) {
             console.log("Error getting OAuth request token : " + error);
