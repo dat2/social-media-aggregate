@@ -11,8 +11,9 @@ class SignInToTwitter extends React.Component {
     }
 
     componentDidMount() {
-        $.post('/twitterInfo', (data) => {
+        $.post('/twitterInfo', data => {
           this.setState(data);
+          console.log(data);
         });
     }
 
